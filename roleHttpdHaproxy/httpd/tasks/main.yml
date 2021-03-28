@@ -1,0 +1,18 @@
+---
+# tasks file for httpd
+- name: "Installing the HTTPD Package"
+  package: 
+        name: "{{package_name}}"
+        state: present
+
+- name: "Copy Content in Document Root"
+  copy:
+        dest: "/var/www/html/index.html"
+        content: "Hello! Welcome..."
+  notify: "Restart Service"
+
+- name: "Starting the httpd Service"
+  service:
+        name: "{{ package_name }}"
+        state: started
+

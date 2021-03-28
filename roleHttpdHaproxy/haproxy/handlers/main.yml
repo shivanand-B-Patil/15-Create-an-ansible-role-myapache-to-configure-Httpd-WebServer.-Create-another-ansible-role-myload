@@ -1,0 +1,7 @@
+---
+# handlers file for haproxy
+
+- name: "Restart Service"
+  service:
+          name: "{{  package_name  }}"
+          state: restarted

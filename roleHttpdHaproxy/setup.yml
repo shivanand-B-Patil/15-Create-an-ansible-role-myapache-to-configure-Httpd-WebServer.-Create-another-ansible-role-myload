@@ -1,0 +1,7 @@
+- hosts: myweb
+  roles:
+          - role: "httpd"
+
+- hosts: mylb
+  roles:
+          - role: "haproxy"
